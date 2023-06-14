@@ -27,6 +27,8 @@
 		819BACBB2A3A4C3D00558B3E /* TunnelKitOpenVPNAppExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 819BACBA2A3A4C3D00558B3E /* TunnelKitOpenVPNAppExtension */; };
 		819BACBD2A3A4C3D00558B3E /* TunnelKitWireGuard in Frameworks */ = {isa = PBXBuildFile; productRef = 819BACBC2A3A4C3D00558B3E /* TunnelKitWireGuard */; };
 		819BACBF2A3A4C3D00558B3E /* TunnelKitWireGuardAppExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 819BACBE2A3A4C3D00558B3E /* TunnelKitWireGuardAppExtension */; };
+		819BACC22A3A585600558B3E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BACC12A3A585600558B3E /* Configuration.swift */; };
+		819BACC32A3A585600558B3E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BACC12A3A585600558B3E /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		811018C02A3A43B9007A2B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811018C12A3A43B9007A2B22 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 		819BACB12A3A4A4F00558B3E /* VpnTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VpnTest.entitlements; sourceTree = "<group>"; };
+		819BACC02A3A585500558B3E /* test2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test2-Bridging-Header.h"; sourceTree = "<group>"; };
+		819BACC12A3A585600558B3E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,11 +140,13 @@
 		811018662A3A2998007A2B22 /* VpnTest */ = {
 			isa = PBXGroup;
 			children = (
+				819BACC12A3A585600558B3E /* Configuration.swift */,
 				819BACB12A3A4A4F00558B3E /* VpnTest.entitlements */,
 				811018672A3A2998007A2B22 /* VpnTestApp.swift */,
 				811018692A3A2998007A2B22 /* ContentView.swift */,
 				8110186B2A3A2998007A2B22 /* Assets.xcassets */,
 				8110186D2A3A2998007A2B22 /* Preview Content */,
+				819BACC02A3A585500558B3E /* test2-Bridging-Header.h */,
 			);
 			path = VpnTest;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 					};
 					811018AC2A3A3BA7007A2B22 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					811018B92A3A43B9007A2B22 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -314,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819BACC22A3A585600558B3E /* Configuration.swift in Sources */,
 				8110186A2A3A2998007A2B22 /* ContentView.swift in Sources */,
 				811018682A3A2998007A2B22 /* VpnTestApp.swift in Sources */,
 			);
@@ -323,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819BACC32A3A585600558B3E /* Configuration.swift in Sources */,
 				811018BF2A3A43B9007A2B22 /* AppProxyProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +536,7 @@
 		811018AE2A3A3BA7007A2B22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUGGING_SYMBOLS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -536,18 +546,24 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VpnTest/test2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		811018AF2A3A3BA7007A2B22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6C965DAL5B;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VpnTest/test2-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
